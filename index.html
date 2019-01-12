@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="./style.css" rel="stylesheet"/>
+  <title>Git Online</title>
+</head>
+<body>
+  <div id="container">
+    <div class="header">
+      <h2>Git Online</h2>
+    </div>
+    <div class="url-input">
+      <input placeholder="请输入github文件地址" />
+    </div>
+    <div class="desc">
+      <ul>
+        <li>
+          <p>1. 打开github项目单文件地址
+            <small>
+            <b>示例git地址：</b>
+            <a target="_blank" href="https://github.com/Andesome/jquery.menu.js/blob/master/index.html">https://github.com/Andesome/jquery.menu.js/blob/master/index.html</a>
+          </small>
+          </p>
+          <img src="./images/step-1.jpg" />
+        </li>
+        <li>
+          <p>2. 复制浏览器地址</p>
+          <img src="./images/step-2.png" />          
+        </li>
+        <li>
+          <p>3. 粘贴至此处回车即可</p>
+          <img src="./images/step-3.png" />
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script>
+    const input = document.querySelector('.url-input');
+    const server = 'http://liaolunling.top:3000/htmlBed?u='
+
+    input.addEventListener('keypress', function(e){
+      if(e.keyCode === 13){
+        const url = e.target.value;
+        window.open(server + url);
+      };
+    })
+  </script>
+</body>
+</html>
